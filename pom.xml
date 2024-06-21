@@ -10,4 +10,33 @@
     <maven.compiler.source>18</maven.compiler.source>
     <maven.compiler.target>18</maven.compiler.target>
   </properties>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/AndriiKviatkovskyi_AutoLab5</url>
+    </repository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/AndriiKviatkovskyi_AutoLab5</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/AndriiKviatkovskyi_AutoLab5</url>
+    </pluginRepository>
+  </pluginRepositories>
+
 </project>
