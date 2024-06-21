@@ -56,5 +56,5 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v4
         env:
-          DEFAULT_BRANCH: main  # Ensure this matches your main branch
+          DEFAULT_BRANCH: main  # Ensure this matches your main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
