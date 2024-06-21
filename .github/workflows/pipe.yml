@@ -8,9 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -35,18 +33,19 @@ jobs:
 
     - name: Configure Maven for GitHub Packages
       run: |
+        mkdir -p ~/.m2
         echo "<settings>
                 <servers>
                   <server>
                     <id>github</id>
                     <username>${{ github.actor }}</username>
-                    <password>${{ secrets.GITHUB_TOKEN }}</password>
+                    <password>${{ secrets.GH_PAT }}</password>
                   </server>
                 </servers>
-              </settings>" > $HOME/.m2/settings.xml
+              </settings>" > ~/.m2/settings.xml
 
     - name: Publish to GitHub Packages
-      run: mvn deploy -s $HOME/.m2/settings.xml
+      run: mvn deploy
 
   super-lint:
     name: Lint code base
